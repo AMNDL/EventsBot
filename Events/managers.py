@@ -144,7 +144,7 @@ class DatabaseManager(object):
         """ Get all available dates for a certain event type"""
         formatted_dates = list()
         raw_dates = sorted(self.model.objects.filter(
-            event_type=event_type).values_list('date__date', flat=True).distinct())
+            event_type=event_type, date__gte=datetime.datetime.now()).values_list('date__date', flat=True).distinct())
         for date in raw_dates:
             formatted_dates.append(date.strftime("%d.%m.%Y"))
         return formatted_dates
