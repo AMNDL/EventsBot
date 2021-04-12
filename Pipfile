@@ -1,0 +1,25 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+django = "*"
+scrapy = "*"
+psycopg2 = "*"
+requests = "*"
+dateparser = "*"
+pillow = "*"
+django-environ = "*"
+pipfile = "*"
+telethon = "*"
+pytelegrambotapi = "*"
+celery = "*"
+redis = "*"
+django-admin-thumbnails = "*"
+slack-sdk = "*"
+
+[requires]
+python_version = "3.8"
