@@ -17,7 +17,7 @@ BOT_NAME = 'EventsParser'
 SPIDER_MODULES = ['Events.EventsParser.spiders']
 NEWSPIDER_MODULE = 'spiders'
 
-# LOG_LEVEL = 'ERROR'
+# LOG_LEVEL = 'WARNING'
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 # USER_AGENT = 'EventsParser (+http://www.yourdomain.com)'
 DOWNLOAD_DELAY = 0.1

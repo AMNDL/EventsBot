@@ -20,6 +20,7 @@ celery = "*"
 redis = "*"
 django-admin-thumbnails = "*"
 slack-sdk = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.8"
