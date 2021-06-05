@@ -7,7 +7,6 @@ services:
     command: >
       bash -c "python /code/manage.py migrate --noinput &&
       python /code/manage.py collectstatic --noinput &&
-      python /code/scrapy_wsgi.py &&
       celery -A EventsProject worker -l INFO --logfile=/tmp/celery.log --detach &&
       celery -A EventsProject beat -l INFO --logfile=/tmp/celery-beat.log --detach &&
       gunicorn EventsProject.wsgi:application -b 0.0.0.0:8001 --reload"
@@ -35,16 +34,6 @@ services:
       - 5432
   redis:
     image: redis
-  nginx:
-    build:
-      ./nginx
-    depends_on:
-      - web
-      - db
-    ports:
-      - "80:80"
-    volumes:
-      - ./public/static/:/static
 
 volumes:
   postgres_data:
